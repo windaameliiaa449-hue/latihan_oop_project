@@ -1,22 +1,19 @@
 <?php
-class User
-{
-    protected $nama;
+// File: User.php (Diasumsikan sebagai kelas induk)
 
-    public function __construct($nama)
-    {
-        $this->nama = $nama;
+abstract class User {
+    protected $username;
+    protected $role;
+
+    public function __construct($username) {
+        $this->username = $username;
     }
 
-    public function getRole()
-    {
-        return "User";
+    public function getUsername() {
+        return $this->username;
     }
 
-    public function tampilkanInfoUser()
-    {
-        echo "Nama: {$this->nama}<br>";
-        echo "Role: {$this->getRole()}<br><br>";
-        echo "<hr";
-    }
+    // Metode ini harus diimplementasikan oleh kelas anak
+    abstract public function getRole();
 }
+?>
